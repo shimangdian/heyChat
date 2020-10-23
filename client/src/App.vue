@@ -1,26 +1,24 @@
 <template>
-  <div class="hey-chat">
-    <Tabs />
-    <div class="router-view">
-      <router-view />
-    </div>
+  <div class='app'>
+    <tabs tabs="[{value: '1', text: '最近聊天'}, {value: '1', text: '好友列表'}]"/>
+    <router-view>
+    </router-view>
   </div>
 </template>
 
-<script>
-import Tabs  from './components/tabs/index'
-export default {
-  name: 'App',
-  component: {
-    Tabs
+<script lang="ts">
+import {defineComponent} from 'vue'
+import tabs from '@/components/tabs/index.vue'
+export default defineComponent({
+  components: {
+    tabs
   },
-  mounted () {
-    console.log(Tabs);
-  }
-}
-
+})
 </script>
 
-<style lang='less'>
-@import './styles/common.less';
+<style lang="less">
+@import '@/styles/common.less';
+.app{
+  height: 100%;
+}
 </style>

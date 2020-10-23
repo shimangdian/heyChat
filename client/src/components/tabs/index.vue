@@ -10,15 +10,20 @@
   </div>
 </template>
 <script lang='ts'>
-import { defineComponent } from 'vue'
-const Component = defineComponent({
-  data() {
-    return {
-      active: 0
-    }
+import {defineComponent, PropType} from 'vue'
+
+interface TabsI {
+  value: string|number,
+  text: string,
+  activeText?: string,
+  icon?: string
+}
+
+export default defineComponent({
+  props: {
+    tabs: Object as PropType<TabsI>
   }
 })
-export default Component
 </script>
 <style lang='less'>
 .tabs{
